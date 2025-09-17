@@ -1,11 +1,11 @@
 # Smart-Soil-Monitor
-# 🌱 Smart Soil Moisture Monitoring System
+# Smart Soil Moisture Monitoring System
 
 This project uses a **Soil Moisture Sensor**, **ESP8266**, and **NinjaIoT platform** to monitor the moisture level of soil in real-time. If the soil becomes too dry, a **buzzer alerts the user** to water the plant. It includes a **fallback mode** that ensures the alert still works even when Wi-Fi is disconnected.
 
 ---
 
-## 📌 Project Objectives
+## Project Objectives
 
 - Monitor real-time soil moisture data.
 - Send data to the cloud using [NinjaIoT](https://iot.roboninja.in/).
@@ -14,7 +14,7 @@ This project uses a **Soil Moisture Sensor**, **ESP8266**, and **NinjaIoT platfo
 
 ---
 
-## 🔧 Hardware Components
+## Hardware Components
 
 | Component            
 |----------------------
@@ -26,7 +26,7 @@ This project uses a **Soil Moisture Sensor**, **ESP8266**, and **NinjaIoT platfo
 
 ---
 
-## 🔌 Circuit Diagram
+## Circuit connection
 
 ![WhatsApp Image 2025-09-18 at 01 48 57_e9357dd3](https://github.com/user-attachments/assets/863598ba-1c0f-4bf0-9a87-f12a088c8320)
 
@@ -43,7 +43,7 @@ This project uses a **Soil Moisture Sensor**, **ESP8266**, and **NinjaIoT platfo
 
 ---
 
-## 📄 Code Overview
+## Code 
 
 ```cpp
 #include <NinjaIoT.h>
