@@ -46,11 +46,11 @@ This project uses a **Soil Moisture Sensor**, **ESP8266**, and **NinjaIoT platfo
 ## Code Summary – Smart Soil Moisture Monitor
 
 
-This Arduino code uses an ESP8266/NodeMCU board to read values from a soil moisture sensor (connected to pin A0). The moisture level is:
+This Arduino code uses an ESP8266 board to read values from a soil moisture sensor (connected to pin A0). The moisture level is:
 
 Sent to NinjaIoT cloud for real-time monitoring.
 
-Used to control a buzzer (or LED) connected to pin D6.
+Used to control a buzzer connected to pin D6.
 
 If the soil moisture drops below a threshold (value < 300), the buzzer is turned ON to alert the user. When moisture is sufficient, the buzzer stays OFF.
 
