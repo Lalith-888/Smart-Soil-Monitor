@@ -43,43 +43,15 @@ This project uses a **Soil Moisture Sensor**, **ESP8266**, and **NinjaIoT platfo
 
 ---
 
-## Code 
+## Code Summary – Smart Soil Moisture Monitor
 
-```cpp
-#include <NinjaIoT.h>
-#include <ESP8266WiFi.h>
 
-NinjaIoT iot;
+This Arduino code uses an ESP8266/NodeMCU board to read values from a soil moisture sensor (connected to pin A0). The moisture level is:
 
-int SoilMoisture = 0;
-const int buzzerPin = D6;
+Sent to NinjaIoT cloud for real-time monitoring.
 
-void setup() {
-  Serial.begin(115200);
-  pinMode(buzzerPin, OUTPUT);
-  iot.connect("shubhajaani", "druvilalu27", "LJ09");   // NinjaIoT credentials
-}
+Used to control a buzzer (or LED) connected to pin D6.
 
-void loop() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("Wi-Fi disconnected! Reconnecting...");
-    iot.connect("shubhajaani", "druvilalu27", "LJ09");
-  }
+If the soil moisture drops below a threshold (value < 300), the buzzer is turned ON to alert the user. When moisture is sufficient, the buzzer stays OFF.
 
-  SoilMoisture = analogRead(A0);
-  Serial.print("Soil Moisture: ");
-  Serial.println(SoilMoisture);
-
-  if (WiFi.status() == WL_CONNECTED) {
-    iot.WriteVar("SoilMoisture", SoilMoisture);
-  }
-
-  if (SoilMoisture < 300) {
-    digitalWrite(buzzerPin, HIGH);
-    Serial.println("⚠️ Soil is dry!");
-  } else {
-    digitalWrite(buzzerPin, LOW);
-  }
-
-  delay(1500);
-}
+The code also includes a Wi-Fi reconnection check (fallback mode) to ensure the device reconnects to NinjaIoT if disconnected.
